@@ -3,6 +3,25 @@ const app = require('express')
 
 // Server Set up
 const server = app()
-server.listen(1009, "192.168.2.59", () => {
-    console.log('server is running...')
+const PORT = 1009
+const HOSTNAME = '0.0.0.0'
+server.listen(PORT, HOSTNAME, () => {
+    console.log('server is running im ${HOSTNAME} ${PORT}' )
 })
+
+let data = [
+    {
+        id: 1,
+        name: 'Dog',
+    },
+    {
+        id: 2,
+        name: 'Cat',
+    },
+    {
+        id: 3,
+        name: 'Fish',
+    },
+]
+
+server.get('/api/data', (req, res) => {})
