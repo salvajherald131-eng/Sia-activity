@@ -6,7 +6,7 @@ const server = app()
 const PORT = 1009
 const HOSTNAME = '0.0.0.0'
 server.listen(PORT, HOSTNAME, () => {
-    console.log('server is running im ${HOSTNAME} ${PORT}' )
+    console.log(`server is running im ${HOSTNAME} ${PORT}` )
 })
 
 let data = [
@@ -24,4 +24,6 @@ let data = [
     },
 ]
 
-server.get('/api/data', (req, res) => {})
+server.get('/api/data', (req, res) => {
+    return res.json(data)
+})
